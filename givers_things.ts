@@ -61,3 +61,7 @@ export const GiversThings100 = [
     { address: 'EQCHODQyANmzftrcaGUOctE_D7XSEZKTepzxXyGLA6dZNDTJ', reward: 10000 },
     { address: 'EQDCeae9X_DZji0GEUXV8IFX5BPID2AX8zVCxugeH_H1fb9Z', reward: 10000 }, // 100
   ]
+
+  export const GiversThings1000000 = [
+    { address: 'EQDusjLMtEC4c_RZTVbOols0FFLdJNdNp2N0XidzXprlZBZs', reward: 1000000 }, // 1000000
+  ]

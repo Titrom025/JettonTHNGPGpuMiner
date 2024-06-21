@@ -7,7 +7,7 @@ import { execSync, exec as exec_callback, spawn, ChildProcess } from 'child_proc
 import fs from 'fs'
 import { WalletContractV4 } from '@ton/ton';
 import dotenv from 'dotenv'
-import { GiversThings100, GiversThings1000, GiversThings10000, GiversThings200, GiversThings5000 } from './givers_things'
+import { GiversThings100, GiversThings1000, GiversThings10000, GiversThings200, GiversThings5000, GiversThings1000000 } from './givers_things'
 import arg from 'arg'
 import { LiteClient, LiteSingleEngine, LiteRoundRobinEngine } from 'ton-lite-client';
 import { getLiteClient, getTon4Client, getTonCenterClient, getTonapiClient } from './client';
@@ -38,7 +38,7 @@ const args = arg({
 let givers = GiversThings5000
 if (args['--givers']) {
     const val = args['--givers']
-    const allowed = [100, 200, 1000, 5000, 10000]
+    const allowed = [100, 200, 1000, 5000, 10000, 1000000]
     if (!allowed.includes(val)) {
         throw new Error('Invalid --givers argument')
     }
@@ -64,6 +64,10 @@ if (args['--givers']) {
             givers = GiversThings10000
             console.log('Using givers 10 000')
             break
+        case 1000000:
+            givers = GiversThings1000000
+            console.log('Using givers 1 000 000');
+            break;
     }
 } else {
     console.log('Using givers 5 000')
